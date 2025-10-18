@@ -3,9 +3,18 @@ import Customer from "../models/Customer.js";
 // 🟢 Tạo mới khách hàng
 export const createCustomer = async (req, res) => {
   try {
-    const customer = await Customer.create(req.body);
+    const data = { ...req.body };
+
+    // Nếu gửi status khác enum, gán default
+    const allowedStatus = ["OK", "50/50", "Chưa OK"];
+    if (!allowedStatus.includes(data.status)) {
+      data.status = "Chưa OK";
+    }
+
+    const customer = await Customer.create(data);
     res.status(201).json(customer);
   } catch (err) {
+    console.log("Error creating customer:", err.message);
     res.status(400).json({ error: err.message });
   }
 };
