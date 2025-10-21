@@ -33,16 +33,24 @@ export const getCustomers = async (req, res) => {
     };
 
     const total = await Customer.countDocuments(query);
+    const totalPages = Math.ceil(total / limit);
+
     const customers = await Customer.find(query)
       .sort({ createdAt: -1 })
       .skip((page - 1) * limit)
       .limit(Number(limit));
 
-    res.json({ data: customers, total });
+    res.json({
+      data: customers,
+      total,
+      currentPage: Number(page),
+      totalPages, // 👈 Thêm dòng này
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
 
 // 🟠 Lấy 1 khách hàng
 export const getCustomer = async (req, res) => {
