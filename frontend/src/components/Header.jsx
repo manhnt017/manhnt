@@ -7,7 +7,7 @@ export default function Header() {
       <div className="container-fluid">
         {/* Logo hoặc tiêu đề */}
         <Link className="navbar-brand" to="/">
-          My Workspace
+         Ling ta linh ting
         </Link>
 
         {/* Nút toggle (hiện menu trên mobile) */}
