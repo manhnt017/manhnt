@@ -3,6 +3,7 @@ import API from "../api";
 import CustomerTable from "../components/CustomerTable";
 import CustomerForm from "../components/CustomerForm";
 
+
 export default function Home() {
   const [customers, setCustomers] = useState([]);
   const [search, setSearch] = useState("");

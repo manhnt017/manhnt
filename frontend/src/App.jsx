@@ -7,6 +7,12 @@ import Notes from "./pages/Notes";
 import Deal from "./pages/Deal";
 import DealPano from "./pages/DealPano.jsx";
 import DealTranhDien from "./pages/DealTranhDien";
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+/>
+
+
 
 export default function App() {
   return (
