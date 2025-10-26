@@ -15,6 +15,8 @@ const customerSchema = new mongoose.Schema(
     googleMap: String,
     note: String,
     date: String,
+    image: String, // 🆕 Thêm trường hình ảnh (link)
+
   },
   { timestamps: true }
 );
